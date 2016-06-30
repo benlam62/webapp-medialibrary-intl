@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MediaLibrary.Models.Media>
+
+@{
+    ViewBag.Title = "Media Library";
+}
+
+<h2>Media Library v6</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Media_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Streaming_Locator_URL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThumbNail)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Media_Name)
+        </td>
+        <td>
+            <a href="@Html.DisplayFor(modelItem => item.Streaming_Locator_URL)">Click to Play</a>
+        </td>
+        <td>
+            <img src="@Html.DisplayFor(modelItem => item.ThumbNail)" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MediaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MediaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MediaId })
+        </td>
+    </tr>
+}
+
+</table>
