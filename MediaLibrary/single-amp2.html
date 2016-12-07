@@ -37,8 +37,9 @@
         var encodeJWtoken = getParameterByName('JWtoken');
         var JWtoken = decodeURIComponent(encodeJWtoken);
         var myPlayer = amp('vid1', myOptions);
-        var amsURL = '//amssamples.streaming.mediaservices.windows.net/830584f8-f0c8-4e41-968b-6538b9380aa5/TearsOfSteelTeaser.ism/manifest';
-        var videoURL = { src: amsURL, type: "application/vnd.ms-sstr+xml", protectionInfo: [{ type: "AES", authenticationToken: JWtoken }]};
+        //var amsURL = '//amssamples.streaming.mediaservices.windows.net/830584f8-f0c8-4e41-968b-6538b9380aa5/TearsOfSteelTeaser.ism/manifest';
+        var amsURL = '//benlamcorpdemo1.streaming.mediaservices.windows.net/347b1812-c19f-4ad3-946d-adfec3e1812e/DemoVideo2.ism/manifest';
+        var videoURL = { src: amsURL, type: "application/vnd.ms-sstr+xml", protectionInfo: [{ type: "AES", authenticationToken: JWtoken }] };
         var srcContent = [videoURL];
         myPlayer.src(srcContent);
     </script>
