@@ -197,9 +197,13 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\benlam-medialibrary - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\benlam-medialibrary - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\benlam-medialibrary-github - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\benlam-medialibrary-github - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\benlam-medialibrary-github - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\benlam-medialibrary-github-Staging - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\benlam-medialibrary-github-Staging - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\dbweb1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\dbweb1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
