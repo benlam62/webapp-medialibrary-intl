@@ -33,7 +33,7 @@ namespace MediaLibrary.Controllers
         private static MediaServicesCredentials _cachedCredentials = null;
         private static readonly string assetName = "DemoVideo2-mp4-Source - MBR";
         private static string tokenString = null;
-        private static int TokenDuration = 1;
+        private static int TokenDuration = 0;
 
         public ActionResult Index()
         {
