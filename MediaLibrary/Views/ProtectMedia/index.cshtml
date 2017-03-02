@@ -12,11 +12,15 @@
     <script src="//amp.azure.net/libs/amp/1.8.0/azuremediaplayer.min.js"></script>
 </head>
 <body>
-    <h1>Video 1</h1>
+    <h1>Auto-format Video for Android or Desktop</h1>
     <Video id="vid1" class="azuremediaplayer amp-default-skin amp-big-play-centered">
         <p class="amp-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video </p>
     </Video>
     <br><br>
+    <h1>HLS Video for iOS</h1>
+    <Video id="vid2" class="azuremediaplayer amp-default-skin amp-big-play-centered">
+        <p class="amp-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video </p>
+    </Video>
     <div id="demo1"></div>
     <br>
     <script>
@@ -40,12 +44,18 @@
             poster: ""
         };
 
-        //var encodeJWtoken = getParameterByName('JWtoken');
-        //var JWtoken = decodeURIComponent(encodeJWtoken);
         var JWtoken = '@ViewBag.TokenString';
         var myPlayer = amp('vid1', myOptions);
         var amsURL = '//benlamcorpdemo1.streaming.mediaservices.windows.net/347b1812-c19f-4ad3-946d-adfec3e1812e/DemoVideo2.ism/manifest';
         var videoURL = { src: amsURL, type: "application/vnd.ms-sstr+xml", protectionInfo: [{ type: "AES", authenticationToken: JWtoken }]};
+        var srcContent = [videoURL];
+        myPlayer.src(srcContent);
+
+        JWtoken = JWtoken.replace('Bearer ', 'Bearer=');
+        JWtoken = encodeURIComponent(JWtoken);
+        var myPlayer = amp('vid2', myOptions);
+        var amsURL = 'http://benlamhlsproxy.azurewebsites.net/Home/Manifest?playbackUrl=http%3a%2f%2fbenlamcorpdemo1.streaming.mediaservices.windows.net%2f347b1812-c19f-4ad3-946d-adfec3e1812e%2fDemoVideo2.ism%2fmanifest(format%3dm3u8-aapl)&webtoken=' + JWtoken;
+        var videoURL = { src: amsURL, type: "application/vnd.apple.mpegurl" };
         var srcContent = [videoURL];
         myPlayer.src(srcContent);
     </script>
